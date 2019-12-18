@@ -6,13 +6,17 @@ import { AppComponent } from './app.component';
 import { WordComponent } from './word/word.component';
 import { BindingTwoWayComponent } from './binding-two-way/binding-two-way.component';
 import { UserFormComponent } from './user-form/user-form.component';
+import { StructComponent } from './struct/struct.component';
+import { WordsComponent } from './words/words.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     WordComponent,
     BindingTwoWayComponent,
-    UserFormComponent
+    UserFormComponent,
+    StructComponent,
+    WordsComponent
   ],
   imports: [
     BrowserModule,

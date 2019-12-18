@@ -1,3 +1,6 @@
 <h1>User form!</h1>
 <input placeholder="userName" (keyup)="showEvent($event);">
-<h3>your name is: {{name}}</h3>
+<!-- <h3 [style.color]="name.length%2 ===0? 'black':'red'">your name is: {{name}}</h3> -->
+<h3 [style.color]="isHightlight ? 'black': 'red'">Your name is: {{name}}</h3>
+<div [class]="isHightlight ? 'circle': 'square'"></div>
+

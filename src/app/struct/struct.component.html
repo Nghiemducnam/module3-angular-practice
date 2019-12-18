@@ -1,0 +1,7 @@
+<p *ngIf="isShow">struct works!</p>
+<ul>
+    <li *ngFor="let i of arrSubjects">
+        <p>{{'Subject:' + i}}</p>
+    </li>
+</ul>
+<button (click)=" isShow = !isShow">Toggle</button>
