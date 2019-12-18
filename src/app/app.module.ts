@@ -8,6 +8,7 @@ import { BindingTwoWayComponent } from './binding-two-way/binding-two-way.compon
 import { UserFormComponent } from './user-form/user-form.component';
 import { StructComponent } from './struct/struct.component';
 import { WordsComponent } from './words/words.component';
+import { PersonComponent } from './person/person.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { WordsComponent } from './words/words.component';
     BindingTwoWayComponent,
     UserFormComponent,
     StructComponent,
-    WordsComponent
+    WordsComponent,
+    PersonComponent
   ],
   imports: [
     BrowserModule,

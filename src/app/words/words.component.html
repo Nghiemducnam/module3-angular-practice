@@ -1,12 +1,25 @@
 <h1>Dictionary!</h1>
-<input type="text" placeholder="English" [(ngModel)]="newEn" />
+<div *ngIf="isShowForm">
+    <input type="text" placeholder="English" [(ngModel)]="newEn" />
+    <br>
+    <input type="text" placeholder="Vietnamese" [(ngModel)]="newVn" />
+    <button (click)="addWord();">add new word</button>
+</div>
+<button (click)="isShowForm = true" *ngIf="!isShowForm"> Thêm từ mới</button>
 <br>
-<input type="text" placeholder="Vietnamese" [(ngModel)]="newVn" />
+<select [(ngModel)]="filterStatus">
+  <option value="viewAll">Xem tất cả</option>
+  <option value="forgot">Từ chưa nhớ</option>
+  <option value="remembered">Từ đã nhớ</option>
+</select>
 <br>
-<button (click)="addWord();">add new word</button>
 <div *ngFor="let word of arrWords">
-    <h4 [ngStyle]="{color: word.memorized?'red': 'green'}">
-        {{word.en}}
-    </h4>
-    <p>{{word.vn}}</p>
+    <div class="word" *ngIf="getShowStatus(word.memorized)">
+        <h4 [ngStyle]="{color: word.memorized?'red': 'green'}">
+            {{word.en}}
+        </h4>
+        <p>{{word.vn}}</p>
+        <button (click)="removeWord(word.id)">Delete</button>
+        <button (click)="word.memorized = !word.memorized">{{word.memorized? 'chưa thuộc' : 'đã thuộc'}}</button>
+    </div>
 </div>
